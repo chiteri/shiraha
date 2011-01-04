@@ -1,0 +1,165 @@
+html, body, ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	border: 0;
+}
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.more {
+	text-align: right;
+}
+.left {
+	float: left;
+}
+.clear {
+	clear: both;
+}
+
+body, h1, h2, h3, form {
+	font: 10px tahoma, arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #5C5C5C;
+}
+
+body {
+	background: url(images/header_bg.jpg) repeat-x;
+	text-align: center;
+}
+#wrapper {
+	text-align: left;
+	margin: auto;
+	width: 774px;
+}
+
+
+#header {
+	height: 203px;
+	position: absolute;
+}
+#header h1 {
+	margin-top: 44px;
+}
+#header h1 img {
+	display: block;
+}
+#nav {
+	margin-top: 7px;
+}
+#nav img {
+	float: left;
+}
+
+#headline {
+	padding-top: 205px;
+}
+
+#photo {
+	float: left;
+	width: 624px;
+}
+#photo div {
+	border: 1px solid #D8D8D8;
+	padding: 2px;
+}
+#photo img {
+	display: block;
+}
+
+#search-news {
+	float: right;
+	width: 140px;
+}
+#search-news div {
+	padding: 3px 0;
+	margin: 0;
+}
+#search-news #q {
+	width: 140px;
+	border: 1px solid #859D31;
+}
+#search-news .downcast {
+	background: #E6E7E7;
+	border-top: 1px solid #CFD0D0;
+	padding: 3px 4px 4px 4px;
+	margin: 2px 0 0 0;
+}
+#search-news h3 {
+	background: url(images/bullet_letter.gif) no-repeat;
+	padding-left: 15px;
+	font-weight: bold;
+	margin: 1em 0 0.4em 0;
+}
+#search-news p {
+	padding-left: 15px;
+	padding-right: 2px;
+	margin: 0.1em 0;
+}
+a {
+	font-weight: bold;
+	color: #5C5C5C;
+}
+
+#body {
+	padding-top: 2em;
+	text-align: justify;
+}
+
+#body-left {
+	float: left;
+	width: 408px;
+}
+#body-right {
+	float: right;
+	width: 330px;
+}
+
+#body-left ul.plussbullets {
+	margin-top: 45px;
+	margin-left: 120px;
+	padding: 0;
+	font-weight: bold;
+}
+#body-left ul.plussbullets li {
+	background: top left url(images/bullet_plus.gif) no-repeat;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 25px;
+}
+
+#body h2, #body p {
+	margin: 0.3em 0;
+}
+
+#body-right p {
+	margin-right: 2em;
+}
+
+#body a.green {
+	color: #9AAB68;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+#gallery img {
+	float: left;
+}
+
+#footer {
+	color: #FFFFFF;
+	background: #42453D url(images/footer_bg.gif) repeat-x;
+	padding: 6px 0 5px 0;
+	margin-top: 2em;
+	font-weight: bold;
+}
+#footer p {
+	margin: 0;
+	padding: 0;
+}
