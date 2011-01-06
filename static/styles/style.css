@@ -31,7 +31,7 @@ body, h1, h2, h3, form {
 }
 
 body {
-	background: url(images/header_bg.jpg) repeat-x;
+	background: url(/static_media/images/header_bg.jpg) repeat-x;
 	text-align: center;
 }
 #wrapper {
@@ -93,7 +93,7 @@ body {
 	margin: 2px 0 0 0;
 }
 #search-news h3 {
-	background: url(images/bullet_letter.gif) no-repeat;
+	background: url(/static_media/images/bullet_letter.gif) no-repeat;
 	padding-left: 15px;
 	font-weight: bold;
 	margin: 1em 0 0.4em 0;
@@ -129,7 +129,7 @@ a {
 	font-weight: bold;
 }
 #body-left ul.plussbullets li {
-	background: top left url(images/bullet_plus.gif) no-repeat;
+	background: top left url(/static_media/images/bullet_plus.gif) no-repeat;
 	margin: 0 0 10px 0;
 	padding: 0 0 0 25px;
 }
@@ -154,7 +154,7 @@ a {
 
 #footer {
 	color: #FFFFFF;
-	background: #42453D url(images/footer_bg.gif) repeat-x;
+	background: #42453D url(/static_media/images/footer_bg.gif) repeat-x;
 	padding: 6px 0 5px 0;
 	margin-top: 2em;
 	font-weight: bold;
