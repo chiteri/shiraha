@@ -18,5 +18,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)), 
     (r'^$', home),
+    (r'', include('django.contrib.flatpages.urls')), 
     (r'^time/$', current_datetime ),
 )

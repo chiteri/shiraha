@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<title> Shiraha Welfare association and Investment group {% block title %} ::: Home page {% endblock %}</title> 
+	<title> Shiraha Welfare association and Investment group ::: {% block title %} Home page {% endblock %}</title> 
 	<!-- Framework CSS -->
 	<link rel="stylesheet" href="../../blueprint/screen.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="../../blueprint/print.css" type="text/css" media="print" />
@@ -52,7 +52,8 @@
 			<div class="clear"></div>
 		</div>
 		<div id="body">
-			<div id="body-left">
+			<div id="body-left"> 
+			{% block content %}
 				<h2><img src="/static_media/images/h_welcome_to_our_site.gif" width="203" height="20" alt="H Welcome To Our Site" /></h2>
 			<p>Don't forgot to check <a href="#">free website templates</a> every day, because we add at least one free website template daily.</p>
 				
@@ -67,6 +68,7 @@
 				<p>If you're looking for beautiful and professionally made templates you can find them at <a href="#">Template Beauty</a>.</p>
 				<p>Even more websites all about website templates on <a href="#">Just Web Templates</a>.</p>
 				<p class="more"><a href="#">more</a></p>
+			{% endblock %}
 				<h2><img src="/static_media/images/h_needs.gif" width="150" height="20" alt="Urgent Needs"></h2>
 				<img src="/static_media/images/pic_3.jpg" width="172" height="92" alt="Pic 3" class="left" />
 				<p><a href="#">Lorem ipsum dolor</a> sit amet, consectetuer adipiscing elit. Mauris ut elit. Sed eu pede. Morbi quis ante a pede feugiat egestas. Etiam feugiat mi in pede. Aenean massa sem.</p>
