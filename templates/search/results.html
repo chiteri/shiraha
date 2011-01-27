@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+
+{% block title %} Search results for "{{ query }}" {% endblock %}
+
+{% block content %} 
+    {% if results %}
+    <h1> You searched for "{{ query }}"; The results are listed below. </h1>
+    <ul> 
+	    {% for page in results %}
+		    <li> <a href="{{ page.get_absolute_urls}}"> {{ page.title }} </a> </li>
+		{% endfor %}
+	</ul>
+	{% else %} 
+	    {% if query %} 
+		    <p> No results found for the term "{{ query }}". </p>
+		{% else %} 
+		    <p> Type a query into the search box above and press "Search" to submit. </p>
+		{% endif %} 
+	{% endif %}
+{% endblock %}

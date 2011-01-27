@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)), 
     (r'^$', home),
+    (r'^search/$', 'shiraha.search.views.search' ), 
     (r'', include('django.contrib.flatpages.urls')), 
     (r'^time/$', current_datetime ),
 )
