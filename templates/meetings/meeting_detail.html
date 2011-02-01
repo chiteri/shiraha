@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+
+{% block title %} {{ object }} {% endblock %}
+
+{% block content %} 
+    {% if object %}
+    <h1> {{ object }} </h1>
+    <ul> 
+		<li> Meeting held on {{ object.day_held|date:"l jS F, Y" }} </li>
+		<li> The agenda for the meeting was "{{ object.agenda }}" </li> 
+		<li> It is to be hosted by {{ object.host }} at {{ object.location }} </li> <br />
+		<li> This is its general announcement: {{ object.announcement }} </li> 
+		<!-- <li> <a href="{{ object.get_absolute_url }}"> {{ object.title }} </a> </li> 
+		<li> <a href="{{ object.get_absolute_url }}"> {{ object.title }} </a> </li> --> 
+	</ul>
+	{% else %} 
+		<p> The details of the meeting were not found. </p>
+	{% endif %}
+{% endblock %}

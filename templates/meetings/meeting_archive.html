@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+
+{% block title %} Meetings held by the group {% endblock %}
+
+{% block content %} 
+    {% if latest %}
+    <h1> The following are the meetings that have been convened by the group. </h1>
+    <ul> 
+	    {% for meeting in latest %}
+		    <li> <a href="{{ meeting.get_absolute_url}}"> {{ meeting }} </a> </li>
+		{% endfor %}
+	</ul>
+	{% else %} 
+		<p> There is no information on meetings to display. </p> 
+	{% endif %}
+{% endblock %}
