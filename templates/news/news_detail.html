@@ -5,7 +5,7 @@
 {% block content %} 
     {% if object %}
     <h1> {{ object.title }} </h1> <br />
-    <p> {{ object.article }} </p>
+    <p> {{ object.article|safe }} </p>
 	{% else %} 
 		<p> Sorry, the news item is unavailable. </p>
 	{% endif %}

@@ -8,7 +8,7 @@
 	    {% for item in latest %}
         <p> 
 		    <a href="{{ item.get_absolute_url }}"> {{ item.title }} </a> <br /> <br /> 
-		    {{ item.article|truncatewords:"50"}}
+		    {{ item.article|safe|truncatewords:"50"}}
 		</p> 
 		<p class="more"><a href="{{ item.get_absolute_url }}">more</a></p>
 		{% endfor %}
