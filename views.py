@@ -1,5 +1,8 @@
-from django.shortcuts import render_to_response 
+from django.shortcuts import render_to_response
+from django.views.generic.simple import direct_to_template
 from django.http import HttpResponse 
+from django.template import RequestContext 
+from shiraha.news.models import News
 import datetime 
 
 def current_datetime(request): 
@@ -8,4 +11,6 @@ def current_datetime(request):
     return HttpResponse (html)
 	
 def home(request): 
-    return render_to_response('base.html')
+    news = News.objects.all()[:2]
+    # return render_to_response('base.html', {'news':news})
+    return direct_to_template(request, 'base.html' , {'context_instance':RequestContext(request), 'news':news}) 

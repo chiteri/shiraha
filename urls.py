@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import * 
 from shiraha.views import current_datetime, home 
+from shiraha.search.views import search 
 import os 
 
 # Uncomment the next two lines to enable the admin:
@@ -18,8 +19,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)), 
     (r'^$', home),
-    (r'^search/$', include('shiraha.search.views.search') ), 
+    (r'^search/$', search ), 
     (r'^meeting/', include('shiraha.meetings.urls') ), 
+    (r'^news/', include('shiraha.news.urls') ), 	
     (r'', include('django.contrib.flatpages.urls')), 
     (r'^time/$', current_datetime ),
 )

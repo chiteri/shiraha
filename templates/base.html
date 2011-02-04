@@ -39,14 +39,20 @@
 					<div class="more"><input type="image" name="search" value="" src="/static_media/images/btn_search.gif"></div>
 				</form>
 				
-				<h2 class="downcast">News &amp; Events</h2>
+				<h2 class="downcast"> <a href="/news/">News &amp; Events </a> </h2>
 				<div id="news-box">
-					<h3><a href="#">05.12.06</a></h3>
-					<p><a href="#">Lorem ipsum dolor</a> sit amet, consectetuer adipiscing elit.</p>
-					<p class="more"><a href="#">more</a></p>
-				  <h3><a href="#">01.12.06</a></h3>
-				  <p><a href="#">Lorem ipsum dolor</a> sit amet, consectetuer adipiscing elit.</p>
-				  <p class="more"><a href="#">more</a></p>
+				{% if news %} 
+				    {% for item in news %} 
+				        <h3>{{ item.pub_date|date:"jS F, Y"}}</h3>
+					    <p><a href="{{ item.get_absolute_url }}">{{ item.title }}</a>  
+						{{ item.article|truncatewords:"5" }}.</p>
+					    <p class="more"><a href="{{ item.get_absolute_url }}">more</a></p>
+					{% endfor %}
+				{% else %}  
+				  <h3><a href="#">TODATE</a></h3>
+				  <p><a href="#">There are no news items submitted at the moment. </p>
+				  <!-- <p class="more"><a href="#">more</a></p> --> 
+				{% endif %} 
 				</div>
 			</div>
 			<div class="clear"></div>

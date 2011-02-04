@@ -96,9 +96,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs', 
     'django.contrib.flatpages', 
+    'shiraha.search', 
     'shiraha.core', 
     'shiraha.meetings', 	
-    'shiraha.search', 
+    'shiraha.news', 
 )
 
 # Allow the system to use the Member model in-built as the entity having profile's info 
