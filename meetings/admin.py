@@ -1,16 +1,16 @@
 from django.contrib import admin 
-from shiraha.meetings.models import Meeting, Minutes 
+from shiraha.meetings.models import Meeting, Attendance 
 
-class MinutesInline(admin.TabularInline):
-    model = Minutes 
-    extra = 1 
-    max_num = 2 
+class AttendanceInline(admin.TabularInline):
+    model = Attendance 
+    extra = 5 
+    max_num = 50 
 
 class MeetingAdmin (admin.ModelAdmin): 
     list_display = ( 'agenda', 'type', 'host', 'day_held', 'location')
-    inlines = [MinutesInline,] 
+    inlines = [AttendanceInline,] 
     list_filter = ['type'] 
-    fields = ['host', 'day_held', 'location', 'type', 'agenda', 'slug', 'announcement' ]  
+    fields = ['host', 'day_held', 'location', 'type', 'agenda', 'slug', 'announcement', 'minutes' ]  
     prepopulated_fields = {"slug": ("agenda",)}
 	
     search_fields = ['host'] 

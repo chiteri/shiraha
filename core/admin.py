@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class NextOfKinInline(admin.TabularInline):
     model = NextOfKin 
+    fk_name = 'member'
     extra = 3 
     max_num = 4 
 	
