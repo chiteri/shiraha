@@ -20,8 +20,8 @@
 			<div id="nav">
 				<a href="/"><img src="/static_media/images/home.jpg" width="66" height="41" alt="Home"></a>
 				<a href="/history/"><img src="/static_media/images/history2.jpg" width="87" height="41" alt="History"></a>
-				<a href="/investment/"><img src="/static_media/images/investment.jpg" width="83" height="41" alt="Investment"></a>
-				<a href="/projects/"><img src="/static_media/images/projects.jpg" width="72" height="41" alt="Projects"></a>
+				<a href="/project/"><img src="/static_media/images/projects.jpg" width="83" height="41" alt="Projects"></a>
+				<a href="/investment/"><img src="/static_media/images/investment.jpg" width="72" height="41" alt="Investment"></a>
 				<a href="/meeting/"><img src="/static_media/images/meetings.jpg" width="84" height="41" alt="Meetings"></a>
 				<a href="/news/"><img src="/static_media/images/news.jpg" width="64" height="41" alt="News"></a>
 				<a href="/photos/"><img src="/static_media/images/photos.jpg" width="89" height="41" alt="Photos"></a>
@@ -45,7 +45,7 @@
 				    {% for item in news %} 
 				        <h3>{{ item.pub_date|date:"jS F, Y"}}</h3>
 					    <p><a href="{{ item.get_absolute_url }}">{{ item.title }}</a>  
-						{{ item.article|truncatewords:"5" }}.</p>
+						{{ item.article|safe|truncatewords:"5" }}.</p>
 					    <p class="more"><a href="{{ item.get_absolute_url }}">more</a></p>
 					{% endfor %}
 				{% else %}  
@@ -57,9 +57,9 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+		{% block content %}
 		<div id="body">
 			<div id="body-left"> 
-			{% block content %}
 				<h2><img src="/static_media/images/h_welcome_to_our_site.gif" width="203" height="20" alt="H Welcome To Our Site" /></h2>
 			<p>Don't forgot to check <a href="#">free website templates</a> every day, because we add at least one free website template daily.</p>
 				
@@ -74,7 +74,7 @@
 				<p>If you're looking for beautiful and professionally made templates you can find them at <a href="#">Template Beauty</a>.</p>
 				<p>Even more websites all about website templates on <a href="#">Just Web Templates</a>.</p>
 				<p class="more"><a href="#">more</a></p>
-			{% endblock %}
+			
 				<h2><img src="/static_media/images/h_needs.gif" width="150" height="20" alt="Urgent Needs"></h2>
 				<img src="/static_media/images/pic_3.jpg" width="172" height="92" alt="Pic 3" class="left" />
 				<p><a href="#">Lorem ipsum dolor</a> sit amet, consectetuer adipiscing elit. Mauris ut elit. Sed eu pede. Morbi quis ante a pede feugiat egestas. Etiam feugiat mi in pede. Aenean massa sem.</p>
@@ -97,8 +97,9 @@
 					<a href="#"><img src="/static_media/images/gal_3.jpg" width="112" height="96" alt="Gal 3"></a>
 				</div>
 			</div>
-			<div class="clear"></div>
+			<div class="clear"></div>			
 		</div>
+		{% endblock %}
 	</div>
 	<div id="footer">
 		<p>&copy; 2006 all rights reserved.</p>

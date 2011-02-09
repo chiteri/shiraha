@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+
+{% block title %} List of Welfare projects {% endblock %}
+
+{% block content %} 
+    {% if object_list %} 
+	    <h1> Welfare projects list. </h1> <hr />
+	    {% for welfare_project in object_list %}
+        <p> 
+		    <a href="{{ welfare_project.get_absolute_url }}"> {{ welfare_project.name }} </a> <br /> <br /> 
+		    {{ welfare_project.description|truncatewords:"50"}}
+		</p> 
+		<p class="more"><a href="{{ welfare_project.get_absolute_url }}">more</a></p>
+		{% endfor %}
+	{% else %} 
+		<p> Sorry, there are no Welfare projects that are currently ongoing. </p>
+	{% endif %}
+{% endblock %}

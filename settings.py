@@ -100,6 +100,7 @@ INSTALLED_APPS = (
     'shiraha.core', 
     'shiraha.meetings', 	
     'shiraha.news', 
+    'shiraha.project', 
 )
 
 # Allow the system to use the Member model in-built as the entity having profile's info 

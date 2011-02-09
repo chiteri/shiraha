@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+
+{% block title %} Project / {{ object.name }} {% endblock %}
+
+{% block content %} 
+    {% if object %}
+    <h1> {{ object.name }} </h1> <br />
+    <p> {{ object.description }} <br /> 
+	{{ object.location}}
+	</p>
+	{% else %} 
+		<p> Sorry, information on the project is unavailable. </p>
+	{% endif %}
+{% endblock %}
