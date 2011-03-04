@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+
+{% block title %} Photo gallery {% endblock %}
+{% block extra_scripts %} 
+    <link href="/static_media/scripts/js/galleria/trunk/galleria.css" rel="stylesheet" type="text/css" media="screen" >
+   <!-- <link rel="stylesheet" type="text/css" media="all" href="/static_media/scripts/js/jquery-ui.custom/development-bundle/themes/base/jquery.ui.all.css" /> 
+	<script type="text/javascript" src="/static_media/scripts/js/jquery-ui.custom/development-bundle/jquery-1.4.2.js"> </script>
+	<script type="text/javascript" src="/static_media/scripts/js/jquery-ui.custom/js/jquery-ui-1.8.4.custom.min.js"> </script> --> 
+    <script type="text/javascript" src="/static_media/scripts/js/galleria/demo/jquery.min.js"> </script>
+	<script type="text/javascript" src="/static_media/scripts/js/galleria/trunk/jquery.galleria.js"> </script> 
+    <script type="text/javascript" src="/static_media/scripts/js/photo-gallery.js" > </script>
+{% endblock %}
+
+{% block content %} 
+    <div class="demo">
+    <div id="main_image"></div> 
+    <ul class="gallery_demo_unstyled"> 
+	    <li> <img src="/static_media/images/gallery_one/DSC00003.jpg" /> </li>
+		<li> <img src="/static_media/images/gallery_one/DSC00005.jpg" /> </li>
+		<li> <img src="/static_media/images/gallery_one/DSC00006.jpg" /> </li>
+		<li> <img src="/static_media/images/gallery_one/DSC00007.jpg" /> </li>
+		<li> <img src="/static_media/images/gallery_one/DSC00008.jpg" /> </li>
+		<li> <img src="/static_media/images/gallery_one/DSC00009.jpg" /> </li>
+		<li> <img src="/static_media/images/gallery_one/DSC00010.jpg" /> </li>
+		<li> <img src="/static_media/images/gallery_one/DSC00011.jpg" /> </li>
+	</ul> 
+	<p class="nav"><a href="#" onclick="$.galleria.prev(); return false;">&laquo; previous</a> | <a href="#" onclick="$.galleria.next(); return false;">next &raquo;</a></p>
+    </div>
+{% endblock %}

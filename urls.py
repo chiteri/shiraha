@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import * 
-from shiraha.views import current_datetime, home 
+from shiraha.views import current_datetime, home, gallery
 from shiraha.search.views import search 
 import os 
 
@@ -23,7 +23,8 @@ urlpatterns = patterns('',
     (r'^meeting/', include('shiraha.meetings.urls') ), 
     (r'^project/', include('shiraha.project.welfare_urls') ), 
     (r'^investment/', include('shiraha.project.investment_urls') ), 
-    (r'^news/', include('shiraha.news.urls') ), 		
+    (r'^news/', include('shiraha.news.urls') ), 	
+    (r'^photo/$', gallery),	
     (r'', include('django.contrib.flatpages.urls')), 
     (r'^time/$', current_datetime ),
 )

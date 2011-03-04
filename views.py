@@ -14,3 +14,8 @@ def home(request):
     news = News.objects.all()[:2]
     # return render_to_response('base.html', {'news':news})
     return direct_to_template(request, 'base.html' , {'context_instance':RequestContext(request), 'news':news}) 
+	
+def gallery(request): 
+    news = News.objects.all()[:2]
+    # return render_to_response('base.html', {'news':news})
+    return direct_to_template(request, 'photo/gallery.html' , {'context_instance':RequestContext(request), 'news':news}) 
