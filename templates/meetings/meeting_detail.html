@@ -4,12 +4,11 @@
 
 {% block content %} 
     {% if object %}
-    <h1> {{ object }} </h1>
+    <h3> {{ object }} </h3>
     <ul> 
 		<li> Meeting held on {{ object.day_held|date:"l jS F, Y" }} </li>
-		<li> The agenda for the meeting was "{{ object.agenda }}" </li> 
 		<li> It is to be hosted by {{ object.host }} at {{ object.location }} </li> <br />
-		<li> This is its general announcement: {{ object.announcement|safe }} </li> 
+		<li> This is its general announcement: {{ object.description|safe }} </li> 
 		<!-- <li> <a href="{{ object.get_absolute_url }}"> {{ object.title }} </a> </li> 
 		<li> <a href="{{ object.get_absolute_url }}"> {{ object.title }} </a> </li> --> 
 	</ul>
