@@ -11,11 +11,11 @@ def current_datetime(request):
     return HttpResponse (html)
 	
 def home(request): 
-    news = News.objects.all()[:2]
+    news = News.objects.all()[:4]
     # return render_to_response('base.html', {'news':news})
     return direct_to_template(request, 'base.html' , {'context_instance':RequestContext(request), 'news':news}) 
 	
 def gallery(request): 
-    news = News.objects.all()[:2]
+    news = News.objects.all()[:4]
     # return render_to_response('base.html', {'news':news})
     return direct_to_template(request, 'photo/gallery.html' , {'context_instance':RequestContext(request), 'news':news}) 

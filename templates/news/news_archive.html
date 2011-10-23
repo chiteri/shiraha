@@ -4,13 +4,13 @@
 
 {% block content %} 
     {% if latest %} 
-	    <h1> Shiraha latest news archive. </h1> <hr />
+	    <h3> Shiraha latest news archive. </h3> 
 	    {% for item in latest %}
         <p> 
-		    <a href="{{ item.get_absolute_url }}"> {{ item.title }} </a> <br /> <br /> 
-		    {{ item.article|safe|truncatewords:"50"}}
+		    <a href="{{ item.article.url }}"> {{ item.article.title }} </a> <br /> <br /> 
+		    {{ item.article.content|truncatewords:"100"|safe}}
 		</p> 
-		<p class="more"><a href="{{ item.get_absolute_url }}">more</a></p>
+		<p class="more"><a href="{{ item.article.url }}">more</a></p>
 		{% endfor %}
 	{% else %} 
 		<p> Sorry, there are not items in the news archive. </p>

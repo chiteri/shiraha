@@ -62,7 +62,7 @@
                 <p><strong> Shiraha </strong> Welfare association and investment group was started in the late 1970s as an effort to take developments back at home. 
 				<a href="http://www.styleshout.com/">^^^</a>. This was by its three esteemed members 
 				<a rel="license" href="http://creativecommons.org/licenses/by/2.5/">
-				Mr. Fred Anday Akolo, Mr. Mukolwe and Dr. Jumaa. </a> They are the first officials of the group who acted as its Chairman, secretary and 
+				Mr. Fred Andayi Akolo, Mr. Mukolwe and Dr. Musa Jumaa. </a> They are the first officials of the group who acted as its Chairman, secretary and 
 				treasurers respectively.
                 </p>
 
@@ -85,66 +85,24 @@
 			
 			<div id="left">			
 				{% block content %}
+				{% if news %} 
+				{% for item in news %}
 				<div class="entry">
 				
-					<h3><a href="index.html">Aliquam Risus Justo</a></h3>
-					<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
-					Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-					posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
-					odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
-					condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
-					In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
-					Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-					posuere nunc justo tempus leo. 				
-					</p>
-								
-					<p><a class="more-link" href="index.html">continue reading</a></p>
+					<h3><a href="{{ item.article.url }}">{{ item.article.title }}</a></h3>
+					{{ item.article.content|truncatewords:"150"|safe }}			
+					<p><a class="more-link" href="{{ item.article.url }}">continue reading</a></p>
 				
 				</div>
-				
-				<div class="entry">
-						
-					<h3>Lorem Ipsum Dolor Sit Amet</h3>
-					<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
-					Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-					posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
-					odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
-					condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
-					In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
-					Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-					posuere nunc justo tempus leo. 				
-					</p>
-				
-					<p><a class="more-link" href="index.html">continue reading</a></p>
-				
-				</div>
-				
-				<div class="entry">
-			
-					<h3>Lorem Ipsum</h3>
-					<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
-					Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-					posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
-					odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
-					condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
-					In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
-					Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-					posuere nunc justo tempus leo. 				
-					</p>
-				
-					<p><a class="more-link" href="index.html">continue reading</a></p>
-			
-				</div>
+				{% endfor %}
+				{% endif %} 
 			{% endblock %}	
 			</div>
 			
 			<div id="right">
 							
 				<div class="sidemenu">	
-					<h3>Sidebar Menu</h3>
+					<h3> Projects </h3>
 					<ul>				
 						<li><a href="index.html">Home</a></li>
 						<li><a href="index.html#TemplateInfo">TemplateInfo</a></li>
@@ -156,8 +114,8 @@
 				</div>
 							
 				<div class="sidemenu">
-					<h3>Sponsors</h3>
-					<ul>
+					<h3> News and Events </h3>
+					<!-- <ul>
 						<li><a href="http://www.dreamtemplate.com" title="Website Templates">DreamTemplate <br />
                             <span>Over 6,000+ Premium Web Templates</span></a>
                         </li>
@@ -176,6 +134,19 @@
 						<li><a href="http://www.webhostingwp.com" title="Web Hosting">Web Hosting <br />
                             <span>Top 10 Hosting Reviews</span></a>
                         </li>
+					</ul> --> 
+					<ul>
+					{% if news %}
+						{% for crumb in news %}
+						<li><a href="{{ crumb.article.url }}" title="{{ crumb.article.title }}"> {{ crumb.article.title|truncatewords:"5" }} <br />
+                            <span> {{ crumb.article.content|truncatewords:"5"}} </span></a>
+                        </li>
+						{% endfor %}
+					{% else %}
+						<li><a href="/news/" title="News and Events"> No News and Events <br />
+                            <span> There are no news item to display. </span></a>
+                        </li>
+					{% endif %}
 					</ul>
 				</div>		
 				
