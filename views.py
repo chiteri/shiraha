@@ -3,6 +3,7 @@ from django.views.generic.simple import direct_to_template
 from django.http import HttpResponse 
 from django.template import RequestContext 
 from shiraha.news.models import News
+from shiraha.project.models import Project
 import datetime 
 
 def current_datetime(request): 
@@ -13,9 +14,11 @@ def current_datetime(request):
 def home(request): 
     news = News.objects.all()[:4]
     # return render_to_response('base.html', {'news':news})
-    return direct_to_template(request, 'base.html' , {'context_instance':RequestContext(request), 'news':news}) 
+    # return direct_to_template(request, 'base.html' , {'context_instance':RequestContext(request), 'news':news}) 
+    return direct_to_template(request, 'base.html' , context_instance=RequestContext(request, processors = [custom_proc]))
 	
 def gallery(request): 
     news = News.objects.all()[:4]
     # return render_to_response('base.html', {'news':news})
     return direct_to_template(request, 'photo/gallery.html' , {'context_instance':RequestContext(request), 'news':news}) 
+	
