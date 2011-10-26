@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response
 from django.views.generic.simple import direct_to_template
 from django.http import HttpResponse 
 from django.template import RequestContext 
+from shiraha.context_processors import custom_proc
 from shiraha.news.models import News
 from shiraha.project.models import Project
 import datetime 

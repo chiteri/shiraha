@@ -62,7 +62,7 @@
                 <p><strong> Shiraha </strong> Welfare association and investment group was started in the late 1970s as an effort to take developments back at home. 
 				<a href="http://www.styleshout.com/">^^^</a>. This was by its three esteemed members 
 				<a rel="license" href="http://creativecommons.org/licenses/by/2.5/">
-				Mr. Fred Andayi Akolo, Mr. Mukolwe and Dr. Musa Jumaa. </a> They are the first officials of the group who acted as its Chairman, secretary and 
+				Mr. Fred Andayi Akolo, Mr. Evans Mukolwe and Mr. James Opindi. </a> They are the first officials of the group who acted as its Chairman, secretary and 
 				treasurers respectively.
                 </p>
 
@@ -85,8 +85,8 @@
 			
 			<div id="left">			
 				{% block content %}
-				{% if latest_news %} 
-				{% for item in latest_news %}
+				{% if LATEST_NEWS %} 
+				{% for item in LATEST_NEWS %}
 				<div class="entry">
 				
 					<h3><a href="{{ item.article.url }}">{{ item.article.title }}</a></h3>
@@ -115,29 +115,9 @@
 							
 				<div class="sidemenu">
 					<h3> News and Events </h3>
-					<!-- <ul>
-						<li><a href="http://www.dreamtemplate.com" title="Website Templates">DreamTemplate <br />
-                            <span>Over 6,000+ Premium Web Templates</span></a>
-                        </li>
-						<li><a href="http://www.themelayouts.com" title="WordPress Themes">ThemeLayouts <br />
-                            <span>Premium WordPress &amp; Joomla Themes</span></a>
-                        </li>
-						<li><a href="http://www.imhosted.com" title="Website Hosting">ImHosted.com <br />
-                            <span>Affordable Web Hosting Provider</span></a>
-                        </li>
-						<li><a href="http://www.dreamstock.com" title="Stock Photos">DreamStock <br />
-                            <span>Download Amazing Stock Photos</span></a>
-                        </li>
-						<li><a href="http://www.evrsoft.com" title="Website Builder">Evrsoft <br />
-                            <span>Website Builder Software &amp; Tools</span></a>
-                        </li>
-						<li><a href="http://www.webhostingwp.com" title="Web Hosting">Web Hosting <br />
-                            <span>Top 10 Hosting Reviews</span></a>
-                        </li>
-					</ul> --> 
 					<ul>
-					{% if latest_news %}
-						{% for news in latest_news %}
+					{% if LATEST_NEWS %}
+						{% for news in LATEST_NEWS %}
 						<li><a href="{{ news.article.url }}" title="{{ news.article.title }}"> {{ news.article.title|truncatewords:"5" }} <br />
                             <span> {{ news.article.content|truncatewords:"5"}} </span></a>
                         </li>
