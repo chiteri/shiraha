@@ -4,10 +4,10 @@
 
 {% block content %} 
     {% if results %}
-    <h1> You searched for "{{ query }}"; The results are listed below. </h1>
+    <h3> You searched for "{{ query }}"; The results are listed below. </h3>
     <ul> 
 	    {% for page in results %}
-		    <li> <a href="{{ page.get_absolute_urls}}"> {{ page.title }} </a> </li>
+		    <li> <a href="{{ page.get_absolute_url}}"> {{ page.title }} </a> </li>
 		{% endfor %}
 	</ul>
 	{% else %} 

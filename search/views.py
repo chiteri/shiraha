@@ -3,7 +3,7 @@ from django.contrib.flatpages.models import FlatPage
 
 # Create your views here.
 def search(request): 
-    query = request.GET.get('q', '') 
+    query = request.GET.get('qsearch', '') 
     results = [ ]	
     if query: 
         results = FlatPage.objects.filter(content__icontains=query)
