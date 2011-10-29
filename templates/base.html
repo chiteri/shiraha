@@ -102,19 +102,20 @@
 			<div id="right">
 							
 				<div class="sidemenu">	
-					<h3> Projects </h3>
-					<ul>				
-						<li><a href="index.html">Home</a></li>
-						<li><a href="index.html#TemplateInfo">TemplateInfo</a></li>
-						<li><a href="style.html">Style Demo</a></li>
-						<li><a href="blog.html">Blog</a></li>
-						<li><a href="archives.html">Archives</a></li>
-						<li><a href="http://www.dreamtemplate.com" title="Web Templates">Web Templates</a></li>
+					<a href="/project/"> <h3> Projects </h3> </a>
+					<ul>	
+					{% if LATEST_PROJECTS %} 
+						{% for project in LATEST_PROJECTS %} 
+						<li><a href="{{ project.get_absolute_url }}">{{ project.name }}</a></li>
+						{% endfor %}
+					{% else %}
+						<li> There are currently no no ongoing projects. </li>
+					{% endif %}
 					</ul>	
 				</div>
 							
 				<div class="sidemenu">
-					<h3> News and Events </h3>
+					<a href="/news/"> <h3> News and Events </h3> </a>
 					<ul>
 					{% if LATEST_NEWS %}
 						{% for news in LATEST_NEWS %}
