@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     # (r'^shiraha/', include('shiraha.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')), 
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')), 
     (r'^static_media/(?P<path>.*)$', 'django.views.static.serve', 
     { 'document_root': os.path.join(os.path.dirname(__file__), 'static').replace('\\','/') }), 
 
