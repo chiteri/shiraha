@@ -9,8 +9,9 @@
 		<li> Meeting held on {{ object.day_held|date:"l jS F, Y" }} </li>
 		<li> It is to be hosted by {{ object.host }} at {{ object.location }} </li> <br />
 		<li> This is its general announcement: {{ object.description|safe }} </li> 
-		<!-- <li> <a href="{{ object.get_absolute_url }}"> {{ object.title }} </a> </li> 
-		<li> <a href="{{ object.get_absolute_url }}"> {{ object.title }} </a> </li> --> 
+		{% if object.minutes %}
+		<li> Access the <a href="{{ object.minutes.url }}"> Minutes of the meeting </a> ...</li> 
+		{% endif %}
 	</ul>
 	{% else %} 
 		<p> The details of the meeting were not found. </p>

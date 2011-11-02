@@ -90,7 +90,7 @@
 				<div class="entry">
 				
 					<h3><a href="{{ item.article.url }}">{{ item.article.title }}</a></h3>
-					{{ item.article.content|truncatewords:"150"|safe }}			
+					{{ item.article.content|safe|truncatewords:"150" }}			
 					<p><a class="more-link" href="{{ item.article.url }}">continue reading</a></p>
 				
 				</div>
@@ -225,7 +225,7 @@
 	<div id="footer-bottom">
 		<div class="bottom-left">
 			<p>
-			&copy; 2010 <strong>Your Copyright Info Here</strong>&nbsp; &nbsp; &nbsp;
+			&copy; 2011 <strong>All rights reserved</strong>&nbsp; &nbsp; &nbsp;
 			<a href="http://www.bluewebtemplates.com/" title="Website Templates">website templates</a> by <a href="http://www.styleshout.com/">styleshout</a>
 			</p>
 		</div>
