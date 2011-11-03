@@ -30,13 +30,14 @@
 		<p id="slogan"> Welfare Association and Investment group ... </p>	
 		
 		<div  id="nav">
-			<ul>
+			<ul> {% block main_navigation %}
 				<li class="first" id="current"><a href="/">Home</a></li>
 				<li><a href="/project/">Projects</a></li>
 				<li><a href="/meeting/">Meetings</a></li>
 				<li><a href="/news/">News & Events</a></li>
 				<li><a href="/photo/">Photos</a></li>
-				<li><a href="/contacts/">Contact Us</a></li>		
+				<li><a href="/contacts/">Contact Us</a></li>
+				{% endblock %}
 			</ul>		
 		</div>	
 		
