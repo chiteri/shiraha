@@ -1,0 +1,24 @@
+{% extends "base_meeting.html" %} 
+
+{% block title %} Meetings held by the group {% endblock %}
+
+{% block content %} 
+    {% if object_list %}
+    <h3> The following are the meetings that have been convened by the group. </h3>
+    <ul> 
+	    {% for meeting in object_list %}
+		    <li> <a href="{{ meeting.get_absolute_url}}"> {{ meeting }} </a> </li>
+		{% endfor %}
+	</ul>
+	{% else %} 
+		<p> There is no information on meetings to display. </p> 
+	{% endif %}
+	
+	<p> {{ page_obj }}
+		{% if page_obj.has_previous %}
+			<a href="?page={{ page_obj.previous_page_number }}">Previous page</a>
+		{% endif %}
+		{% if page_obj.has_next %}
+			<a href="?page={{ page_obj.next_page_number }}">Next page</a>
+		{% endif %}</p>
+{% endblock %}
