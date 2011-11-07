@@ -1,11 +1,14 @@
 {% extends "base_project.html" %} 
 
-{% block title %} List of Welfare projects {% endblock %}
+{% block title %} List of Shiraha projects {% endblock %}
+
+{% block feature_text %}
+    <h3> Welfare and Investments projects. </h3>  
+{% endblock %}
 
 {% block content %} 
     {% if object_list %} 
 	<div class="entry">
-	    <h3> Welfare projects list. </h3> 
 	    {% for welfare_project in object_list %}
 		  <p>  <a href="{{ welfare_project.get_absolute_url }}"> {{ welfare_project.name }} </a> <br />
 		    {{ welfare_project.description|truncatewords:"50"}} </p>

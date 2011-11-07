@@ -1,18 +1,20 @@
 {% extends "base_contact.html" %} 
 
-{% block title %} Contacts / Contact Form {% endblock %}
+{% block title %} Contacts / Contact Form {% endblock %} 
+
+{% block feature_text %}
+	<h3> Contact us </h3>
+{% endblock %}
 
 {% block content %} 
-    <h1>Contact us</h1>
     {% if form.errors %}
         <p style="color:red;">
             Please correct the error {{ form.errors|pluralize}} below.
         </p>
     {% endif %}
 	<form action="/contacts/" method="post">
-        <!-- <table> -->
+        {% csrf_token %}
              {{ form.as_p }}
-        </table>
         <input type="submit" value="Submit">
     </form>
 {% endblock %}

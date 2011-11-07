@@ -2,9 +2,13 @@
 
 {% block title %} Latest news articles {% endblock %}
 
+{% block feature_text %}
+	    <h3> Shiraha news archive. </h3> 
+{% endblock %} 
+
 {% block content %} 
     {% if object_list %} 
-	    <h3> Shiraha latest news archive. </h3> 
+
 	    {% for item in object_list %}
         <p> 
 		    <a href="{{ item.article.url }}"> {{ item.article.title }} </a> <br /> <br /> 

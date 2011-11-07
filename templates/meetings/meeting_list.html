@@ -2,9 +2,13 @@
 
 {% block title %} Meetings held by the group {% endblock %}
 
+{% block feature_text %}
+	<h3> The following are the meetings that have been convened by the group. </h3>			
+{% endblock %} 
+
 {% block content %} 
     {% if object_list %}
-    <h3> The following are the meetings that have been convened by the group. </h3>
+    
     <ul> 
 	    {% for meeting in object_list %}
 		    <li> <a href="{{ meeting.get_absolute_url}}"> {{ meeting }} </a> </li>

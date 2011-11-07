@@ -50,13 +50,12 @@
 	<div id="featured" class="clear">				
 				
 			<a name="TemplateInfo"></a>
-			
+			{% block feature_text %}
 			<div class="image-block">
               <img src="/static_media/images/img-featured.jpg" alt="featured"/>
-            </div>			
+            </div>	
 			
 			<div class="text-block">
-			
 				<h2><a href="index.html"> History of the Welfare Association </a></h2>
                 <p class="post-info">Posted by <a href="index.html">Sam </a> | Filed under <a href="index.html">History</a>, <a href="index.html">About</a></p>
 			
@@ -72,13 +71,12 @@
                 <a href="/photo/" title="Website Templates"> individuals' houses. </a>.
 				</p>
 
-				<p><a href="/history/" class="more-link">Read More</a></p>
-								
+				<p><a href="/history/" class="more-link">Read More</a></p>		
 			</div>								
-	
+			{% endblock %}	
 	</div>	
-	<!-- featured ends -->
-	
+	<!-- featured ends -->		
+				
 	<!-- content -->
 	<div id="content-outer" class="clear"><div id="content-wrap">
 	

@@ -2,9 +2,12 @@
 
 {% block title %} Latest news articles {% endblock %}
 
+{% block feature_text %}
+	    <h3> Shiraha news archive. </h3> 
+{% endblock %}
+
 {% block content %} 
     {% if latest %} 
-	    <h3> Shiraha latest news archive. </h3> 
 	    {% for item in latest %}
         <p> 
 		    <a href="{{ item.article.url }}"> {{ item.article.title }} </a> <br /> <br /> 
