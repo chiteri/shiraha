@@ -1,7 +1,9 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext 
 from shiraha.context_processors import custom_proc
-from shiraha.contacts.forms import ContactForm
+from shiraha.contacts.forms import ContactForm 
+from django.core.mail import send_mail 
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def contacts(request): 
@@ -14,8 +16,7 @@ def contacts(request):
                 cd['subject'],
                 cd['message'],
                 cd.get('e_mail', 'martin.chiteri@gmail.com'),
-                ['chiteri@geek.co.ke'],
-            )
+                ['chiteri@geek.co.ke'], fail_silently=False)
             return HttpResponseRedirect('/contacts/thanks/')
     else: 
         form = ContactForm()

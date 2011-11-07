@@ -24,6 +24,6 @@ urlpatterns = patterns('',
     (r'^project/', include('shiraha.project.urls') ), 
     (r'^news/', include('shiraha.news.urls') ), 	
     (r'^photo/$', gallery),	
-    (r'^contacts/$', include('shiraha.contacts.urls')),
+    (r'^contacts/', include('shiraha.contacts.urls')),
     (r'', include('django.contrib.flatpages.urls')), 
 )
