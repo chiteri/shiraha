@@ -88,9 +88,9 @@
 				{% for item in LATEST_NEWS %}
 				<div class="entry">
 				
-					<h3><a href="{{ item.article.url }}">{{ item.article.title }}</a></h3>
-					{{ item.article.content|safe|truncatewords:"150" }}			
-					<p><a class="more-link" href="{{ item.article.url }}">continue reading</a></p>
+					<h3><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h3>
+					{{ item.article_html|truncatewords_html:"150"|safe }}			
+					<p><a class="more-link" href="{{ item.get_absolute_url }}">continue reading</a></p>
 				
 				</div>
 				{% endfor %}
@@ -118,8 +118,8 @@
 					<ul>
 					{% if LATEST_NEWS %}
 						{% for news in LATEST_NEWS %}
-						<li><a href="{{ news.article.url }}" title="{{ news.article.title }}"> {{ news.article.title|truncatewords:"5" }} <br />
-                            <span> {{ news.article.content|truncatewords:"5"}} </span></a>
+						<li><a href="{{ news.get_absolute_url }}" title="{{ news.title }}"> {{ news.title|truncatewords:"4" }} <br />
+                            <span> {{ news.article_html|truncatewords_html:"12"|safe}} </span></a>
                         </li>
 						{% endfor %}
 					{% else %}

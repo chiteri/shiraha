@@ -12,7 +12,7 @@
     <ul> 
 		<li> Meeting held on {{ object.day_held|date:"l jS F, Y" }} </li>
 		<li> It is to be hosted by {{ object.host }} at {{ object.location }} </li> <br />
-		<li> This is its general announcement: {{ object.description|safe }} </li> 
+		<li> This is its general announcement: {{ object.description_html|safe }} </li> 
 		{% if object.minutes %}
 		<li> Access the <a href="{{ object.minutes.url }}"> Minutes of the meeting </a> ...</li> 
 		{% endif %}

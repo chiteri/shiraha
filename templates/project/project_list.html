@@ -11,7 +11,7 @@
 	<div class="entry">
 	    {% for welfare_project in object_list %}
 		  <p>  <a href="{{ welfare_project.get_absolute_url }}"> {{ welfare_project.name }} </a> <br />
-		    {{ welfare_project.description|truncatewords:"50"}} </p>
+		    {{ welfare_project.description_html|safe|truncatewords:"50"}} </p>
 
 		<p class="more"><a href="{{ welfare_project.get_absolute_url }}">more</a></p>
 		{% endfor %}

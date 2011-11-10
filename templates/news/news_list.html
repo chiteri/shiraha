@@ -11,10 +11,10 @@
 
 	    {% for item in object_list %}
         <p> 
-		    <a href="{{ item.article.url }}"> {{ item.article.title }} </a> <br /> <br /> 
-		    {{ item.article.content|truncatewords:"100"|safe}} 
+		    <a href="{{ item.get_absolute_url }}"> {{ item.title }} </a> <br /> <br /> 
+		    {{ item.article|safe|truncatewords_html:"100"}} 
 		</p> 
-		<p class="more"><a href="{{ item.article.url }}">more</a></p>
+		<p class="more"><a href="{{ item.get_absolute_url }}">more</a></p>
 		{% endfor %}
 	{% else %} 
 		<p> Sorry, there are not items in the news archive. </p>

@@ -1,15 +1,14 @@
 {% extends "base_news.html" %} 
 
-{% block title %} News / {{ object.article.title }} {% endblock %}
+{% block title %} News / {{ object.title }} {% endblock %}
 
 {% block feature_text %}
-    <h3> {{ object.article.title }} </h3> 
+    <h3> {{ object.title }} </h3> 
 {% endblock %}
 
 {% block content %} 
     {% if object %}
-    <h3> {{ object.article.title }} </h3> 
-    {{ object.article.content|safe }} 
+    {{ object.article_html|safe }} 
 	{% else %} 
 		<p> Sorry, the news item is unavailable. </p>
 	{% endif %}

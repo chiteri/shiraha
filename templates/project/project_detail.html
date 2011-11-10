@@ -8,7 +8,7 @@
 
 {% block content %} 
     {% if object %}
-    <p> {{ object.description }} <br /> 
+    <p> {{ object.description_html|safe }} <br /> 
 	{{ object.location}}
 	</p>
 	{% else %} 
